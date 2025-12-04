@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mechanical — Pro Car Care Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="theme-dark" data-page="mechanical">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html" title="Home">
+        <img src="assets/logo.png" alt="Logo" width="48" height="48">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="mechanical.html" class="nav-link active">Mechanical</a></li>
+          <li><a href="detailing.html" class="nav-link">Detailing</a></li>
+          <li><a href="modifications.html" class="nav-link">Modifications</a></li>
+          <li><a href="accessories.html" class="nav-link">Accessories</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger-m" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="content" class="page-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Mechanical</h1>
+        <!-- REPLACE: nav description -->
+        <p class="nav-desc"><!-- REPLACE: nav description -->Professional Mechanical solutions tailored for modern vehicles.</p>
+      </div>
+    </section>
+
+    <section class="content-block container">
+      <h2>Our Mechanical Services</h2>
+      <p>Placeholder content: list of services, pricing grid, workshop gallery, technician bios — replace with real content.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Pro Car Care Hub" width="36" height="36">
+        <div>Pro Car Care Hub</div>
+      </div>
+      <div class="footer-copy">© <span id="year-m"></span></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year-m').textContent = new Date().getFullYear();</script>
+</body>
+</html>
