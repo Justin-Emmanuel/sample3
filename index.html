@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Car Care Hub — Luxury care. Lasting shine.</title>
+  <meta name="description" content="Pro Car Care Hub — Premium car care: mechanical, detailing, modifications, accessories.">
+  <!-- Open Graph placeholders -->
+  <meta property="og:title" content="Pro Car Care Hub" />
+  <meta property="og:description" content="Luxury care. Lasting shine." />
+  <meta property="og:image" content="<!-- HERO_POSTER_PLACEHOLDER: replace with social image url -->" />
+  <meta property="og:type" content="website" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Icon CDN (Iconify) -->
+  <!-- ICON_CDN: replace if you prefer another icon set -->
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js" defer></script>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+  <!-- Locomotive Scroll (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" defer></script>
+  <!-- Three.js placeholder; will be lazy loaded in main.js when needed -->
+  <!-- Lottie Player for animated fallback/logo -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.6.0/dist/lottie-player.js" defer></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="theme-dark" data-page="index">
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Site preloader (simple) -->
+  <div id="preloader" aria-hidden="true">
+    <div class="spinner" role="status" aria-label="Loading site"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <!-- Small logo acts as home link -->
+      <a class="logo-link" href="index.html" title="Pro Car Care Hub — Home" aria-label="Pro Car Care Hub home">
+        <!-- LOGO_PNG_PLACEHOLDER: replace with your small header png -->
+        <img src="assets/logo.png" alt="Pro Car Care Hub logo" class="logo-img" width="48" height="48">
+        <!-- alternatively you can replace above img with a Lottie animation: -->
+        <!-- <lottie-player src="<!-- LOTTIE_LOGO_JSON -->" background="transparent" speed="1" style="width:48px; height:48px;" loop autoplay></lottie-player> -->
+      </a>
+
+      <!-- Navigation (desktop) -->
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="mechanical.html" data-page="mechanical" class="nav-link"><span class="iconify" data-icon="mdi:tools" data-inline="false"></span><span>Mechanical</span></a></li>
+          <li><a href="detailing.html" data-page="detailing" class="nav-link"><span class="iconify" data-icon="mdi:brush" data-inline="false"></span><span>Detailing</span></a></li>
+          <li><a href="modifications.html" data-page="modifications" class="nav-link"><span class="iconify" data-icon="mdi:tune" data-inline="false"></span><span>Modifications</span></a></li>
+          <li><a href="accessories.html" data-page="accessories" class="nav-link"><span class="iconify" data-icon="mdi:car-sports" data-inline="false"></span><span>Accessories</span></a></li>
+          <li><a href="contact.html" data-page="contact" class="nav-link cta"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span><span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (will be toggled) -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="mechanical.html" class="mobile-link">Mechanical</a></li>
+        <li><a href="detailing.html" class="mobile-link">Detailing</a></li>
+        <li><a href="modifications.html" class="mobile-link">Modifications</a></li>
+        <li><a href="accessories.html" class="mobile-link">Accessories</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Background video — lazy load attribute handled in main.js.
+           Replace the placeholder link below with your CDN MP4.
+           <!-- HERO_VIDEO_CDN: replace with mp4 CDN (15-30s) -->
+      -->
+      <video id="hero-video" class="hero-video" playsinline muted loop poster="assets/hero-poster.jpg" preload="metadata" aria-hidden="true">
+        <source src="assets/hero-sample.mp4" type="video/mp4">
+        <!-- If video isn't supported, poster will be shown -->
+      </video>
+
+      <!-- smoke layer: two implementations provided.
+           1) WebGL via Three.js (lazy-loaded) using a transparent smoke texture and shader (preferred)
+           2) CSS/SVG animated sprite fallback (used if WebGL can't be loaded)
+           See js/main.js for lazy init and comments.
+      -->
+      <canvas id="smoke-canvas" class="smoke-canvas" aria-hidden="true"></canvas>
+      <div id="smoke-fallback" class="smoke-fallback" aria-hidden="true">
+        <!-- CSS/SVG sprite fallback; replace sprite if desired -->
+        <svg class="smoke-sprite" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <!-- lightweight smoke shapes for fallback animation -->
+          <g class="s1"><ellipse cx="100" cy="80" rx="120" ry="40" /></g>
+          <g class="s2"><ellipse cx="400" cy="50" rx="160" ry="50" /></g>
+          <g class="s3"><ellipse cx="700" cy="90" rx="100" ry="30" /></g>
+        </svg>
+      </div>
+
+      <!-- Glassmorphism overlay -->
+      <div class="hero-overlay">
+        <!-- 3D car container (Three.js canvas lazy-loaded) -->
+        <div id="car-scene" class="car-scene" aria-hidden="true">
+          <!-- Fallback Lottie player (small loop) will be inserted here by JS if three.js can't run -->
+          <!-- LOTTIE_CAR_FALLBACK: replace with Lottie JSON if desired -->
+        </div>
+
+        <!-- Center brand mark (large decorative) -->
+        <div class="brand-wrap">
+          <!-- HERO_BRAND_SVG/PNG: you can replace the heading with an SVG or an image -->
+          <h1 class="brand-mark">Pro Car Care Hub</h1>
+          <p class="tagline">Luxury care. Lasting shine.</p> <!-- replaceable -->
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn btn-primary" id="book-now">Book Now</a>
+            <a href="#services" class="btn btn-ghost">Our Services</a>
+          </div>
+        </div>
+
+        <!-- Secondary small overlays: stats/trust badges -->
+        <div class="hero-badges">
+          <div class="badge">
+            <div class="badge-value" data-count="5000">0</div>
+            <div class="badge-label">happy customers</div>
+          </div>
+          <div class="badge">
+            <div class="badge-value" data-count="10">0</div>
+            <div class="badge-label">years experience</div>
+          </div>
+          <div class="badge">
+            <div class="badge-value" data-count="50">0</div>
+            <div class="badge-label">services</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES TEASER -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Signature Services</h2>
+        <div class="cards">
+          <!-- Card: Cleaning -->
+          <article class="card">
+            <div class="card-icon gradient-3d" aria-hidden="true">
+              <!-- ICON_CDN used for icon; replace icon via data-icon attr if desired -->
+              <span class="iconify" data-icon="mdi:water" data-inline="false" aria-hidden="true"></span>
+            </div>
+            <h3>Cleaning</h3>
+            <p>Deep interior & exterior cleaning to restore showroom quality.</p>
+            <a class="card-cta" href="detailing.html">Learn more</a>
+          </article>
+
+          <!-- Card: Washing -->
+          <article class="card">
+            <div class="card-icon gradient-3d" aria-hidden="true">
+              <span class="iconify" data-icon="mdi:water-percent" data-inline="false" aria-hidden="true"></span>
+            </div>
+            <h3>Washing</h3>
+            <p>Gentle, effective washing that protects your paint finish.</p>
+            <a class="card-cta" href="detailing.html">Learn more</a>
+          </article>
+
+          <!-- Card: Teflon Coating -->
+          <article class="card">
+            <div class="card-icon gradient-3d" aria-hidden="true">
+              <span class="iconify" data-icon="mdi:shield-check" data-inline="false" aria-hidden="true"></span>
+            </div>
+            <h3>Teflon Coating</h3>
+            <p>Long-lasting ceramic and Teflon coatings for superior protection.</p>
+            <a class="card-cta" href="detailing.html">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Pro Car Care Hub" width="36" height="36">
+          <div>Pro Car Care Hub</div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="mechanical.html">Mechanical</a>
+          <a href="detailing.html">Detailing</a>
+          <a href="modifications.html">Modifications</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-copy">© <span id="year"></span> Pro Car Care Hub — All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp floating CTA -->
+    <a href="https://wa.me/<!-- PHONE_NUMBER: replace with phone for wa.me link -->" id="whatsapp-cta" class="whatsapp-cta" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+      <!-- WHATSAPP_PNG: replace with whatsapp-animated.png -->
+      <img src="assets/whatsapp.png" width="60" height="60" alt="WhatsApp chat">
+    </a>
+
+  </main>
+
+  <!-- Page transition overlay (GSAP will animate) -->
+  <div id="page-transition" aria-hidden="true"></div>
+
+  <!-- Analytics / scripts note: Place analytics script just before </body> if needed -->
+
+  <!-- Inline small script for immediate DOM-safe things (keeps minimal) -->
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // If user prefers reduced motion, add attribute to body for CSS/JS to read
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.body.classList.add('reduce-motion');
+    }
+  </script>
+</body>
+</html>
